@@ -9,5 +9,9 @@ namespace Onion.CleanArchitecture.Domain.Common
         public DateTime Created { get; set; }
         public string LastModifiedBy { get; set; }
         public DateTime? LastModified { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public bool IsDelete { get; set; } = false;
+
     }
 }

@@ -19,13 +19,15 @@ var _env = builder.Environment;
 _services.AddEnvironmentVariablesExtension();
 _services.AddIdentityLayer();
 _services.AddApplicationLayer();
-_services.AddSqlServerIdentityInfrastructure(typeof(Program).Assembly.FullName);
+// _services.AddSqlServerIdentityInfrastructure(typeof(Program).Assembly.FullName);
+_services.AddMySqlIdentityInfrastructure(typeof(Program).Assembly.FullName);
 _services.AddIdentityRepositories(_config);
-_services.AddS3StorageExtension(_config, _env);
+// _services.AddS3StorageExtension(_config, _env);
 _services.AddPersistenceRepositories();
-_services.AddSqlServerPersistenceInfrastructure(typeof(Program).Assembly.FullName);
+// _services.AddSqlServerPersistenceInfrastructure(typeof(Program).Assembly.FullName);
+_services.AddMySqlPersistenceInfrastructure(typeof(Program).Assembly.FullName);
 _services.AddSharedInfrastructure(_config);
-_services.AddRabbitMqExtension(_config, _env.IsProduction());
+// _services.AddRabbitMqExtension(_config, _env.IsProduction());
 _services.AddCorsPolicy();
 _services.AddOpenTelemetryTracing(options =>
                options

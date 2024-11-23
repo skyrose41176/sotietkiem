@@ -17,15 +17,15 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence.Repositories
 
     public class EmailRepositoryAsync : IEmailRepositoryAsync
     {
-        private readonly IBus _bus;
+        // private readonly IBus _bus;
         private IConfiguration _config;
         public ILogger<EmailRepositoryAsync> _logger;
         private bool isProduction = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == Environments.Production;
         public EmailRepositoryAsync(ILogger<EmailRepositoryAsync> logger, IConfiguration config
-            , IBus bus
+            // , IBus bus
             )
         {
-            _bus = bus;
+            // _bus = bus;
             _config = config;
             _logger = logger;
         }
@@ -41,17 +41,18 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence.Repositories
                 rabbitvHost = Environment.GetEnvironmentVariable(RabbitMqEnvConst.Vhost);
             }
             Uri uri = new Uri($"rabbitmq://{rabbitHost}/{rabbitvHost}/{TdvPhanBoQueue}");
-            var endPoint = await _bus.GetSendEndpoint(uri);
-            _logger.LogInformation("Gui queue mail");
-            _logger.LogInformation("uri: " + uri);
-            var EmailSends = new List<string>();
-            await endPoint.Send(new MailPublisher()
-            {
-                EmailSend = emailRequest.EmailTo,
-                EmailCc = emailRequest.EmailCc,
-                Title = $" (Quan trọng) - KH Phản ánh/ đánh giá thấp CLDV qua kênh QRCode tại TTKD",
-                Content = "Nội dung email"
-            });
+            // var endPoint = await _bus.GetSendEndpoint(uri);
+            // _logger.LogInformation("Gui queue mail");
+            // _logger.LogInformation("uri: " + uri);
+            // var EmailSends = new List<string>();
+            // await endPoint.Send(new MailPublisher()
+            // {
+            //     EmailSend = emailRequest.EmailTo,
+            //     EmailCc = emailRequest.EmailCc,
+            //     Title = $" (Quan trọng) - KH Phản ánh/ đánh giá thấp CLDV qua kênh QRCode tại TTKD",
+            //     Content = "Nội dung email"
+            // });
+
         }
     }
 }

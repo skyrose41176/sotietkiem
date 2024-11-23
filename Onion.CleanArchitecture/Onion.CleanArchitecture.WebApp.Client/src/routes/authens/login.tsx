@@ -15,10 +15,10 @@ const LoginPage: React.FC = () => {
         if (result.success) {
           navigate("/");
         } else {
-          navigate("/login-ad");
+          navigate("/login");
         }
       } else {
-        navigate("/login-ad");
+        navigate("/login");
       }
     };
 

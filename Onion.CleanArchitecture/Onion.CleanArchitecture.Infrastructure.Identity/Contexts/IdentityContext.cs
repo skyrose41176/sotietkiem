@@ -13,7 +13,7 @@ namespace Onion.CleanArchitecture.Infrastructure.Identity.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.HasDefaultSchema("onion");
+            // builder.HasDefaultSchema("onion");
             builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "User");

@@ -25,6 +25,7 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence.Contexts
 
         public DbSet<DinhKemThaoLuan> DinhKemThaoLuans { get; set; }
         public DbSet<ThaoLuan> ThaoLuans { get; set; }
+        public DbSet<LaiSuat> LaiSuats { get; set; }
         public DbSet<StateChangeLog> StateChangeLogs { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -48,7 +49,7 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.HasDefaultSchema("onion");
+            // builder.HasDefaultSchema("onion");
             builder.Entity<ApplicationUser>().ToTable(t => t.ExcludeFromMigrations());
             //All Decimals will have 18,6 Range
             foreach (var property in builder.Model.GetEntityTypes()

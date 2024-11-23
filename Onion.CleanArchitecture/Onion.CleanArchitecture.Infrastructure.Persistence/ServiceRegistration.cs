@@ -50,8 +50,10 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence
                 if (!string.IsNullOrWhiteSpace(appConnStr))
                 {
                     var serverVersion = new MySqlServerVersion(new Version(5, 7, 35));
-                    services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseMySql(
+                    services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
+                    options
+                    .AddInterceptors(serviceProvider.GetRequiredService<StatusUpdateInterceptor>())
+                    .UseMySql(
                         appConnStr, serverVersion,
                         b =>
                         {

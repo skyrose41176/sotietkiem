@@ -97,7 +97,7 @@ export const AppRoutes = () => {
             />
           }
         />
-        <Route
+        {/* <Route
           path="/login-ad"
           element={
             <LoginAdPage
@@ -123,7 +123,7 @@ export const AppRoutes = () => {
               }
             />
           }
-        />
+        /> */}
       </Route>
       <Route
         element={

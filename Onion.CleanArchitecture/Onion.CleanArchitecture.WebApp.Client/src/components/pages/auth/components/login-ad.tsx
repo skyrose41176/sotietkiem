@@ -71,7 +71,7 @@ export const LoginAdPage: React.FC<LoginProps> = ({
     if (resultLoginAdPage.success) {
       navigateLoginAdPage("/dashboard");
     } else {
-      navigateLoginAdPage("/login-ad");
+      navigateLoginAdPage("/login");
     }
   };
   const PageTitleLoginAdPage =

@@ -74,12 +74,12 @@ namespace Onion.CleanArchitecture.WebApp.Server.Extensions
         }
         public static void AddS3StorageExtension(this IServiceCollection services, IConfiguration config, IWebHostEnvironment env)
         {
-            // var endpoint = "dc-s3.f555.com.vn:8080";
-            // var accessKey = "qlvb&secretKey";
-            // var secretKey = "*t8$3vbtrojans";
-            var endpoint = config["S3Setting:ServiceUrl"];
-            var accessKey = config["S3Setting:AccessKey"];
-            var secretKey = config["S3Setting:SecretKey"];
+            var endpoint = "dc-s3.f555.com.vn:8080";
+            var accessKey = "qlvb&secretKey";
+            var secretKey = "*t8$3vbtrojans";
+            // var endpoint = config["S3Setting:ServiceUrl"];
+            // var accessKey = config["S3Setting:AccessKey"];
+            // var secretKey = config["S3Setting:SecretKey"];
             Console.WriteLine("S3_SERVICE_URL:" + endpoint + accessKey + secretKey);
             if (env.IsProduction())
             {

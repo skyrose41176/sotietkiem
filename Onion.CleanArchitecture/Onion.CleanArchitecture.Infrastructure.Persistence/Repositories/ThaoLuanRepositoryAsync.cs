@@ -37,7 +37,7 @@ namespace Onion.CleanArchitecture.Infrastructure.Persistence.Repositories
                             .Where(x => x.ProductId == productId)
                             .Where(x => x.ParentId.Equals(parentId))
                             .CountAsync();
-            return  thaoLuans;
+            return thaoLuans;
 
         }
     }
