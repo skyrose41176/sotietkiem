@@ -1,0 +1,9 @@
+/.vs
+**/bin/
+**/obj/
+**/node_modules/
+/.vscode
+**/appsettings.Development.json
+Onion.CleanArchitecture/Onion.CleanArchitecture.WebApp.Server/wwwroot/policy.csv
+Onion.CleanArchitecture/Onion.CleanArchitecture.WebApp.Server/Onion.CleanArchitecture.WebApp.Server.sln
+Onion.CleanArchitecture/Onion.CleanArchitecture.WebApp.Server/Onion.CleanArchitecture.WebApp.Server.csproj.user
